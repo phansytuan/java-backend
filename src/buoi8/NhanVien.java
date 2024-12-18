@@ -1,4 +1,4 @@
-package Buoi8;
+package buoi8;
 
 public abstract class NhanVien {
     protected String maNV;

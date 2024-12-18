@@ -1,4 +1,4 @@
-package Buoi8;
+package buoi8;
 
 public class GiamDoc extends NhanVien {
     private double coPhan; // tính theo tỉ lệ (0.0-1.0), ví dụ 0.2 = 20%

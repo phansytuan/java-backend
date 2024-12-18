@@ -1,4 +1,4 @@
-package Buoi8;
+package buoi8;
 
 import java.util.Scanner;
 

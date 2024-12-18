@@ -1,4 +1,4 @@
-package Buoi8;
+package buoi8;
 
 public class NhanVienThuong extends NhanVien {
     private TruongPhong truongPhongQuanLy;
