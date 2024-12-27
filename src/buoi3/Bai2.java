@@ -6,6 +6,7 @@ public class Bai2 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập một số nguyên dương: ");
         int n = scanner.nextInt();
+
         String binary = Integer.toBinaryString(n);
         System.out.println("Số nhị phân của " + n + " là: " + binary);
     }

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Bai3ArrayOperations {
+
     // Hàm kiểm tra số nguyên tố
     public static boolean isPrime(int n) {
         if (n <= 1)
@@ -90,6 +91,7 @@ public class Bai3ArrayOperations {
         System.out.println();
 
         // 4. Sắp xếp mảng
+
         // Tạo hai danh sách cho số chẵn và lẻ
         ArrayList<Integer> evenList = new ArrayList<>();
         ArrayList<Integer> oddList = new ArrayList<>();
@@ -99,10 +101,13 @@ public class Bai3ArrayOperations {
             else
                 oddList.add(num);
         }
+
         // Sắp xếp số chẵn giảm dần
         evenList.sort((a, b) -> b - a);
+
         // Sắp xếp số lẻ tăng dần
         oddList.sort((a, b) -> a - b);
+
         // Kết hợp lại thành mảng đã sắp xếp
         int index = 0;
         for (int num : evenList)
@@ -151,6 +156,7 @@ public class Bai3ArrayOperations {
         int valueToAdd = scanner.nextInt();
         System.out.print("Nhập vị trí cần thêm (index): ");
         int position = scanner.nextInt();
+
         if (position < 0 || position > arr.length) {
             System.out.println("Vị trí không hợp lệ. Tự động thêm vào cuối mảng.");
             position = arr.length;

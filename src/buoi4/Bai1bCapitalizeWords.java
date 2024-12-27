@@ -10,6 +10,7 @@ public class Bai1bCapitalizeWords {
         String[] words = text.split("\\s+");
         StringBuilder capitalizedText = new StringBuilder();
 
+        // Viết hoa chữ đầu trong mỗi từ
         for (String word : words) {
             capitalizedText.append(Character.toUpperCase(word.charAt(0)))
                     .append(word.substring(1))
