@@ -1,0 +1,19 @@
+ Bài 1)
+ Nhập và hiển thị thông tin cá nhân từ bàn phím bao gồm:
+  Nhập họ và tên:
+  Nhập ngày tháng năm sinh
+  Nhập quê quán:
+  Nhập trường học
+ a) In ra màn hình:
+ Xin chào {họ và tên} đến từ {quê quán}, sinh ngày {ngày tháng năm sinh}, học tại
+ trường {trường học}
+
+  Bài 2:
+  Nhập vào hai số tính
+  1) Tổng
+  2) Tích
+  3) Thương
+  4) Số dư của thương
+
+  Bài 3) Cho phép nhận vào hai cạnh của hình chữ nhật
+  tính diện tích hình chữ nhật

@@ -1,0 +1,35 @@
+chạy các câu lệnh trong file quanlynhansu.sql để tạo database và làm các bài tập
+Bài tập
+1. GROUP BY:
+Tính tổng lương của mỗi phòng ban:
+2. HAVING:
+Lọc các phòng ban có tổng lương lớn hơn 3000:
+3. DISTINCT:
+Lấy danh sách vị trí công việc duy nhất:
+4. LIMIT & OFFSET:
+Lấy 3 nhân viên đầu tiên, bỏ qua 2 nhân viên đầu tiên:
+5. LIKE:
+Tìm nhân viên có tên chứa “Nguyễn”:
+6. SUM và AVG:
+Tính tổng và trung bình lương của toàn bộ nhân viên:
+7. INNER JOIN:
+Lấy danh sách nhân viên và tên phòng ban của họ:
+8. LEFT JOIN:
+Lấy danh sách tất cả phòng ban và nhân viên của phòng ban đó (nếu có):
+
+9. RIGHT JOIN:
+Lấy danh sách tất cả nhân viên và thông tin phòng ban của họ (nếu có):
+
+10. SELF JOIN:
+Tìm các nhân viên có cùng mức lương
+
+11. Tìm phòng ban có nhiều nhân viên nhất và tổng lương của phòng ban đó
+12. Tìm nhân viên có mức lương cao nhất trong mỗi phòng ban
+13. Tính mức lương trung bình của từng vị trí công việc, chỉ hiển thị các vị trí có lương trung bình lớn hơn 1500
+14. Lấy danh sách nhân viên và đồng nghiệp cùng phòng ban (không bao gồm chính họ) 
+15. Tính tổng số năm kinh nghiệm của mỗi phòng ban
+16. Tìm nhân viên được tuyển dụng sớm nhất trong mỗi phòng ban, bao gồm cả tên và ngày tuyển dụng
+17. Tìm phòng ban có tổng lương lớn nhất và hiển thị tên nhân viên, lương và phòng ban đó
+18. Phân nhóm nhân viên theo bậc lương (ví dụ: < 1500, 1500-2000, > 2000) và tính tổng số nhân viên trong từng nhóm/-strong/-heart:>:o:-((:-h Sử dụng CASE và GROUP BY: 
+19. Tìm nhân viên có tổng số lương cao nhất trong tất cả các phòng ban (bao gồm cả tên phòng ban)
+20. Tìm tên nhân viên có lương cao hơn mức lương trung bình của phòng ban mà họ làm việc
