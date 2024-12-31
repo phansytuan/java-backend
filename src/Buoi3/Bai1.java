@@ -1,16 +1,29 @@
 package Buoi3;
+import java.util.Scanner;
 
 public class Bai1 {
     public static void main(String[] args) {
-        for (int soTo1000 = 0; soTo1000 <= 200; soTo1000++) {
-            for (int soTo2000 = 0; soTo2000 <= 100; soTo2000++) {
-                for (int soTo5000 = 0; soTo5000 <= 40; soTo5000++) {
-                    if (soTo1000 * 1000 + soTo2000 * 2000 + soTo5000 * 5000 == 200000) {
-                        System.out.println("1000đ: " + soTo1000 + ", 2000đ: " + soTo2000 + ", 5000đ: " + soTo5000);
-                    }
-                }
-            }
+        Scanner scanner = new Scanner(System.in); // Tạo đối tượng Scanner
+        int n;
+
+        // Yêu cầu nhập số nguyên dương
+        do {
+            System.out.print("Nhập số nguyên dương n: ");
+            n = scanner.nextInt();
+        } while (n <= 0); // Điều kiện: nếu n <= 0 thì lặp lại yêu cầu nhập
+
+//Nếu điều kiện đúng (nghĩa là n nhỏ hơn hoặc bằng 0), chương trình quay lại thực thi khối do.
+//Nếu điều kiện sai (nghĩa là n lớn hơn 0), vòng lặp kết thúc, chương trinh được tiếp tục.
+
+
+        int sum = 0;
+        // Tính tổng S(n) = 1^3 + 2^3 + ... + n^3
+        for (int i = 1; i <= n; i++) {
+            sum += i * i * i; // (i^3) / Math.pow(i,3)
         }
+
+        // Hiển thị kết quả
+        System.out.println("Tổng S(n) = " + sum);
+        scanner.close();
     }
 }
-
