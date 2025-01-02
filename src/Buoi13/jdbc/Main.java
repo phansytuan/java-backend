@@ -1,5 +1,4 @@
 package Buoi13.jdbc;
-
 import java.sql.*;
 
 public class Main {

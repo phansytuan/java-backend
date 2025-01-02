@@ -32,6 +32,8 @@ VALUES
 select * from employees;
 select * from departments;
 
+
+
 # 1. GROUP BY: Tính tổng lương của mỗi phòng ban:
 -- Lấy ID của phòng ban và tính tổng lương của tất cả nhân viên trong mỗi phòng ban đó
 select
