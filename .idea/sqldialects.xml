@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/Buoi12/quanlynhansu.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/Buoi13/Co_so_du_lieu_Atino.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/Buoi13/QuanLyDuAn.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/src/Buoi13/jdbc/Co_so_du_lieu_Atino.sql" dialect="GenericSQL" />
   </component>
 </project>
