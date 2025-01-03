@@ -79,23 +79,23 @@ public class Main {
     private static void printMenu() {
         System.out.println("\n===== MENU =====");
         System.out.println("1. Quản lý tài khoản:");
-        System.out.println("   1.1. Thêm tài khoản mới");
-        System.out.println("   1.2. Sửa thông tin tài khoản");
-        System.out.println("   1.3. Xóa tài khoản");
-        System.out.println("   1.4. Tìm kiếm tài khoản");
+        System.out.println("   1.1 Thêm tài khoản mới");
+        System.out.println("   1.2 Sửa thông tin tài khoản");
+        System.out.println("   1.3 Xóa tài khoản");
+        System.out.println("   1.4 Tìm kiếm tài khoản");
         System.out.println("2. Giao dịch tài khoản:");
-        System.out.println("   2.1. Nạp tiền vào tài khoản");
-        System.out.println("   2.2. Rút tiền từ tài khoản");
-        System.out.println("   2.3. Chuyển khoản giữa hai tài khoản");
+        System.out.println("   2.1 Nạp tiền vào tài khoản");
+        System.out.println("   2.2 Rút tiền từ tài khoản");
+        System.out.println("   2.3 Chuyển khoản giữa hai tài khoản");
         System.out.println("3. Quản lý giao dịch:");
-        System.out.println("   3.1. Hiển thị lịch sử giao dịch của một tài khoản");
-        System.out.println("   3.2. Hiển thị toàn bộ giao dịch trong hệ thống");
+        System.out.println("   3.1 Hiển thị lịch sử giao dịch của một tài khoản");
+        System.out.println("   3.2 Hiển thị toàn bộ giao dịch trong hệ thống");
         System.out.println("4. Quản lý nhân viên:");
-        System.out.println("   4.1. Thêm nhân viên mới");
-        System.out.println("   4.2. Xem danh sách nhân viên");
-        System.out.println("   4.3. Gán tài khoản cho nhân viên");
+        System.out.println("   4.1 Thêm nhân viên mới");
+        System.out.println("   4.2 Xem danh sách nhân viên");
+        System.out.println("   4.3 Gán tài khoản cho nhân viên");
         System.out.println("5. Thoát chương trình:");
-        System.out.println("   5.1. Thoát khỏi hệ thống");
+        System.out.println("   5.1 Thoát khỏi hệ thống");
         System.out.print("Lựa chọn: ");
     }
 
