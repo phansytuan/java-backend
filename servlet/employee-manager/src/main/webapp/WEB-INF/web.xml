@@ -3,4 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+
+ <!-- cách khai báo servlet-->
+<!--    bước 1: khai báo class servlet-->
+    <servlet>
+<!-- khai báo tên của nó-->
+        <servlet-name>HomeServlet</servlet-name>
+<!-- chỉ định được  vị trí class của servlet-->
+        <servlet-class>vn.t3h.employeemanager.controller.HomeServlet</servlet-class>
+    </servlet>
+
+<!--    bước 2: config servlet sẽ được tương ứng với URL nào trên trình duyệt-->
+    <servlet-mapping>
+<!--        tên servlet đã khai báo trên thẻ <servlet>-->
+        <servlet-name>HomeServlet</servlet-name>
+<!--        đường dẫn ứng với servlet, khi truy cập vào đường dẫn localhost:8080/home-servlet
+           => sẽ được xử lý bởi HomeServlet có class trong vn.t3h.employeemanager.controller.HomeServlet-->
+        <url-pattern>/home-servlet</url-pattern>
+    </servlet-mapping>
+
+
+<!--    config file nào sẽ được chạy đầu tiên khi vừa start app-->
+    <welcome-file-list>
+        <welcome-file>HomePage.jsp</welcome-file>
+    </welcome-file-list>
+
 </web-app>
