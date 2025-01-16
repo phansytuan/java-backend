@@ -1,17 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 1/15/2025
-  Time: 8:03 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Employee List (JSTL Version)</title>
+    <title>Employee List (JSTL)</title>
     <style>
         table {
             border-collapse: collapse;
@@ -40,7 +34,7 @@
 <h1>Employee List</h1>
 
 <!-- Form tìm kiếm -->
-<form class="search-form" action="<%= request.getContextPath() %>/EmployeeSearchServlet" method="get">
+<form class="search-form" action="<%= request.getContextPath() %>/employee" method="get">
     <label>Name:</label>
     <input class="search-input" type="text" name="name"
            value="<%= request.getParameter("name") == null ? "" : request.getParameter("name") %>" />
@@ -73,7 +67,6 @@
 
     <input type="submit" value="Search" />
 </form>
-
 <!-- Kiểm tra danh sách employeeList bằng JSTL -->
 <!-- Nếu không có dữ liệu (null hoặc rỗng) thì hiển thị thông báo -->
 <c:if test="${empty employeeList}">

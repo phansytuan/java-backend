@@ -7,15 +7,15 @@
 
     <servlet>
         <servlet-name>employeeSearch</servlet-name>
-        <servlet-class>controller.EmployeeSearchServlet</servlet-class>
+        <servlet-class>vn.t3h.btvn.employeemanagement.controller.EmployeeSearchServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>employeeSearch</servlet-name>
-        <url-pattern>/EmployeeSearchServlet</url-pattern>
+        <url-pattern>/employee</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>EmployeeSearch.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
