@@ -7,8 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeDao {
 
+public class EmployeeDao {
     public List<Employee> searchEmployees(
             String name,
             String salaryStr,
@@ -20,9 +20,9 @@ public class EmployeeDao {
         List<Employee> employees = new ArrayList<>();
 
         String sql = "SELECT e.employee_id, e.name, e.position, e.salary, d.department_name, e.hire_date " +
-                "FROM employees e " +
-                "LEFT JOIN departments d ON e.department_id = d.department_id " +
-                "WHERE 1=1 ";
+                     "FROM employees e " +
+                     "LEFT JOIN departments d ON e.department_id = d.department_id " +
+                     "WHERE 1=1 ";
 
         // Tạo điều kiện động
         if (name != null) {
