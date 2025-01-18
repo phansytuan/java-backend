@@ -14,52 +14,22 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+        <javax.servlet-api.version>5.0.0</javax.servlet-api.version>
         <mysql-connector.version>8.0.32</mysql-connector.version>
-        <maven.compiler.source>21.0.4</maven.compiler.source>
-        <maven.compiler.target>21.0.4</maven.compiler.target>
-        <junit.version>5.9.2</junit.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+<!--        <junit.version>5.9.2</junit.version>-->
     </properties>
 
-    <!-- KHAI BÁO REPOSITORIES, PLUGIN REPOSITORIES -->
     <repositories>
         <repository>
             <id>central</id>
             <name>Maven Central Repository</name>
             <url>https://repo.maven.apache.org/maven2</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
         </repository>
     </repositories>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>central</id>
-            <name>Maven Central Plugin Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-    <!-- KẾT THÚC KHAI BÁO REPOSITORIES -->
-
     <dependencies>
-<!--        &lt;!&ndash; Servlet API &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax.servlet</groupId>-->
-<!--            <artifactId>javax.servlet-api</artifactId>-->
-<!--            <version>${javax.servlet-api.version}</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
-
         <!-- MySQL Connector -->
         <dependency>
             <groupId>mysql</groupId>
@@ -67,14 +37,28 @@
             <version>${mysql-connector.version}</version>
         </dependency>
 
-        <!-- JSP + JSTL -->
+        <!-- JSTL -->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <!-- Jakarta Servlet API -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${javax.servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JUnit for Unit Testing -->
 <!--        <dependency>-->
-<!--            <groupId>javax.servlet</groupId>-->
-<!--            <artifactId>jstl</artifactId>-->
-<!--            <version>1.2</version>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter</artifactId>-->
+<!--            <version>${junit.version}</version>-->
+<!--            <scope>test</scope>-->
 <!--        </dependency>-->
-        <dependency>    <groupId>org.glassfish.web</groupId>    <artifactId>jakarta.servlet.jsp.jstl</artifactId>    <version>2.0.0</version></dependency>
-        <dependency>    <groupId>jakarta.servlet</groupId>    <artifactId>jakarta.servlet-api</artifactId>    <version>5.0.0</version>    <scope>provided</scope></dependency>
     </dependencies>
 
     <build>
