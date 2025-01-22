@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeDAOimpl implements EmployeeDAO {
+public class EmployeeDAOmysqlImpl implements EmployeeDAO {
     @Override
     public List<Employee> getAllEmployee() {
         // tạo connection đến db sau khi đã có các (dependency) thư viện cần thiết
@@ -49,9 +49,7 @@ public class EmployeeDAOimpl implements EmployeeDAO {
         }
 
 //        trả về kết quả là danh sách employee
-
-
-        return null;
+        return employeesResult;
     }
     public Connection getConnection() {
         String url="jdbc:mysql://localhost:3306/quanlynhansuservlet";

@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import vn.t3h.employeemanager.dao.EmployeeDAO;
+import vn.t3h.employeemanager.dao.impl.EmployeeDAOmysqlImpl;
 import vn.t3h.employeemanager.model.Employee;
 import vn.t3h.employeemanager.service.EmployeeService;
 import vn.t3h.employeemanager.service.EmployeeServiceImpl;
@@ -18,7 +20,9 @@ import java.util.List;
 public class EmployeeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        EmployeeService employeeService = new EmployeeServiceImpl();
+        EmployeeDAO employeeDAO = new EmployeeDAOmysqlImpl();
+
+        EmployeeService employeeService = new EmployeeServiceImpl(employeeDAO);
         List<Employee> employees = employeeService.getAllEmployees();
         req.setAttribute("employeesData", employees);
 
