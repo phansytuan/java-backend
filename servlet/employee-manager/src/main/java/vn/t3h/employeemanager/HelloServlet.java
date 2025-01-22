@@ -1,4 +1,4 @@
-package vn.edu.t3h.employeemanager;
+package vn.t3h.employeemanager;
 
 import java.io.*;
 
