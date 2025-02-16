@@ -5,91 +5,109 @@
 <html>
 <head>
     <title>Employee List (JSTL)</title>
-    <style>
-        /* Cấu hình hiển thị bảng */
-        table {border-collapse: collapse; width: 100%; margin-top: 20px;}
-        table, th, td {border: 1px solid #ccc;}
-        th, td {padding: 8px; text-align: left;}
-        /* Cấu hình form tìm kiếm */
-        .search-form {margin-bottom: 10px;}
-        .search-form label {margin-right: 8px;}
-        .search-input {margin-right: 15px;}
-    </style>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-<h1>Employee List</h1>
+<body class="container mt-4">
 
-<!-- Form tìm kiếm -->
-<form class="search-form" action="<%= request.getContextPath() %>/employee" method="get">
-    <!-- Ô nhập liệu tìm kiếm theo tên nhân viên -->
-    <label>Name:</label>
-    <input class="search-input" type="text" name="name"
-           value="<%= request.getParameter("name") == null ? "" : request.getParameter("name") %>" />
+<h1 class="text-center mb-4">Employee List</h1>
 
-    <!-- Ô nhập liệu tìm kiếm theo mức lương lớn hơn hoặc bằng -->
-    <label>Salary (>=):</label>
-    <input class="search-input" type="number" name="salary"
-           value="<%= request.getParameter("salary") == null ? "" : request.getParameter("salary") %>" />
+<!-- Add Employee Button -->
+<div class="d-flex justify-content-end mb-3">
+    <a href="${pageContext.request.contextPath}/employee-add" class="btn btn-success">Add Employee</a>
+</div>
 
-    <!-- Ô nhập liệu tìm kiếm theo ngày bắt đầu -->
-    <label>From Hire Date:</label>
-    <input class="search-input" type="date" name="fromHireDate"
-           value="<%= request.getParameter("fromHireDate") == null ? "" : request.getParameter("fromHireDate") %>" />
+<!-- Search Form -->
+<form class="row g-3 mb-4" action="<%= request.getContextPath() %>/employee" method="get">
+    <div class="col-md-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name"
+               value="<%= request.getParameter("name") == null ? "" : request.getParameter("name") %>">
+    </div>
 
-    <!-- Ô nhập liệu tìm kiếm theo ngày kết thúc -->
-    <label>To Hire Date:</label>
-    <input class="search-input" type="date" name="toHireDate"
-           value="<%= request.getParameter("toHireDate") == null ? "" : request.getParameter("toHireDate") %>" />
+    <div class="col-md-3">
+        <label class="form-label">Salary (>=)</label>
+        <input type="number" class="form-control" name="salary"
+               value="<%= request.getParameter("salary") == null ? "" : request.getParameter("salary") %>">
+    </div>
 
-    <!-- Ô nhập liệu tìm kiếm theo vị trí/chức vụ -->
-    <label>Position:</label>
-    <input class="search-input" type="text" name="position"
-           value="<%= request.getParameter("position") == null ? "" : request.getParameter("position") %>" />
+    <div class="col-md-3">
+        <label class="form-label">From Hire Date</label>
+        <input type="date" class="form-control" name="fromHireDate"
+               value="<%= request.getParameter("fromHireDate") == null ? "" : request.getParameter("fromHireDate") %>">
+    </div>
 
-    <!-- Ô chọn để tìm kiếm theo phòng ban -->
-    <label>Department:</label>
-    <select class="search-input" name="departmentId">
-        <option value="">--All--</option>
-        <!-- Dữ liệu phòng ban chúng ta hard-code hoặc load dynamic từ DB -->
-        <option value="1" <%= "1".equals(request.getParameter("departmentId")) ? "selected" : "" %>>Sales</option>
-        <option value="2" <%= "2".equals(request.getParameter("departmentId")) ? "selected" : "" %>>HR</option>
-        <option value="3" <%= "3".equals(request.getParameter("departmentId")) ? "selected" : "" %>>IT</option>
-        <option value="4" <%= "4".equals(request.getParameter("departmentId")) ? "selected" : "" %>>Finance</option>
-    </select>
+    <div class="col-md-3">
+        <label class="form-label">To Hire Date</label>
+        <input type="date" class="form-control" name="toHireDate"
+               value="<%= request.getParameter("toHireDate") == null ? "" : request.getParameter("toHireDate") %>">
+    </div>
 
-    <!-- Nút tìm kiếm -->
-    <input type="submit" value="Search" />
+    <div class="col-md-3">
+        <label class="form-label">Position</label>
+        <input type="text" class="form-control" name="position"
+               value="<%= request.getParameter("position") == null ? "" : request.getParameter("position") %>">
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Department</label>
+        <select class="form-select" name="departmentId">
+            <option value="">--All--</option>
+            <option value="1" <%= "1".equals(request.getParameter("departmentId")) ? "selected" : "" %>>Sales</option>
+            <option value="2" <%= "2".equals(request.getParameter("departmentId")) ? "selected" : "" %>>HR</option>
+            <option value="3" <%= "3".equals(request.getParameter("departmentId")) ? "selected" : "" %>>IT</option>
+            <option value="4" <%= "4".equals(request.getParameter("departmentId")) ? "selected" : "" %>>Finance</option>
+        </select>
+    </div>
+
+    <div class="col-md-3 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100">Search</button>
+    </div>
 </form>
 
-<!-- Sử dụng JSTL để kiểm tra danh sách nhân viên -->
-<!-- Nếu không có nhân viên nào khớp, hiển thị thông báo -->
+<!-- If no employees found -->
 <c:if test="${empty employeeList}">
-    <h3>Không tìm thấy nhân viên phù hợp.</h3>
+    <h3 class="text-center text-danger">Không tìm thấy nhân viên phù hợp.</h3>
 </c:if>
 
-<!-- Nếu danh sách nhân viên không rỗng, hiển thị bảng -->
+<!-- Employee Table -->
 <c:if test="${not empty employeeList}">
-    <table>
-        <tr>
-            <th>Employee ID</th>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Salary</th>
-            <th>Department</th>
-            <th>Hire Date</th>
-        </tr>
-        <!-- Lặp qua danh sách nhân viên bằng JSTL -->
-        <c:forEach var="emp" items="${employeeList}">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="table-primary">
             <tr>
-                <td><c:out value="${emp.employeeId}" /></td>
-                <td><c:out value="${emp.name}" /></td>
-                <td><c:out value="${emp.position}" /></td>
-                <td><c:out value="${emp.salary}" /></td>
-                <td><c:out value="${emp.departmentName}" /></td>
-                <td><c:out value="${emp.hireDate}" /></td>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Department</th>
+                <th>Hire Date</th>
+                <th>Action</th>
             </tr>
-        </c:forEach>
-    </table>
+            </thead>
+            <tbody>
+            <c:forEach var="emp" items="${employeeList}">
+                <tr>
+                    <td><c:out value="${emp.employeeId}" /></td>
+                    <td><c:out value="${emp.name}" /></td>
+                    <td><c:out value="${emp.position}" /></td>
+                    <td><c:out value="${emp.salary}" /></td>
+                    <td><c:out value="${emp.departmentName}" /></td>
+                    <td><c:out value="${emp.hireDate}" /></td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/employee/edit?employeeId=${emp.employeeId}"
+                           class="btn btn-warning btn-sm me-2">Edit</a>
+                        <a href="${pageContext.request.contextPath}/employee/delete?employeeId=${emp.employeeId}"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Are you sure you want to delete this employee?');">Delete</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </c:if>
+
 </body>
 </html>
