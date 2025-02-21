@@ -12,9 +12,8 @@ import vn.t3h.btvn.employeemanagement.service.IEmployeeService;
 import vn.t3h.btvn.employeemanagement.service.impl.EmployeeServiceImpl;
 import java.io.IOException;
 
-
-@WebServlet(value = "/employee-add")
-public class AddEmployeeServlet extends HttpServlet {
+@WebServlet("/employee-edit")
+public class EditEmployeeServlet extends HttpServlet {
     private IEmployeeService employeeService;
 
     @Override
@@ -23,43 +22,53 @@ public class AddEmployeeServlet extends HttpServlet {
         this.employeeService = new EmployeeServiceImpl(new EmployeeDaoMysqlImpl());
     }
 
+    // Hiển thị form chỉnh sửa với dữ liệu đã có của nhân viên
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("add-employee.jsp");
-        requestDispatcher.forward(req, resp);
+        String employeeIdStr = req.getParameter("employeeId");
+        if(employeeIdStr != null){
+            int employeeId = Integer.parseInt(employeeIdStr);
+            Employee employee = employeeService.getEmployeeById(employeeId);
+            req.setAttribute("employee", employee);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("edit-employee.jsp");
+            dispatcher.forward(req, resp);
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/employee");
+        }
     }
 
+    // Xử lý cập nhật dữ liệu sau khi chỉnh sửa
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Lấy dữ liệu từ form
+        String employeeIdStr = req.getParameter("employeeId");
+        int employeeId = Integer.parseInt(employeeIdStr);
         String name = req.getParameter("name");
         String position = req.getParameter("position");
         String salaryStr = req.getParameter("salary");
         String departmentIdStr = req.getParameter("departmentId");
         String hireDateStr = req.getParameter("hireDate");
 
-        // Chuyển đổi dữ liệu
         double salary = Double.parseDouble(salaryStr);
         int departmentId = Integer.parseInt(departmentIdStr);
         java.sql.Date hireDate = java.sql.Date.valueOf(hireDateStr);
 
-        // Tạo đối tượng Employee
         Employee employee = new Employee();
+        employee.setEmployeeId(employeeId);
         employee.setName(name);
         employee.setPosition(position);
         employee.setSalary(salary);
         employee.setDepartmentId(departmentId);
         employee.setHireDate(hireDate);
 
-        // Gọi service thêm nhân viên
-        boolean isSuccess = employeeService.addEmployee(employee);
-
+        boolean isSuccess = employeeService.updateEmployee(employee);
         if(isSuccess){
             resp.sendRedirect(req.getContextPath() + "/employee");
         } else {
-            req.setAttribute("errorMessage", "Thêm nhân viên thất bại!");
-            RequestDispatcher dispatcher = req.getRequestDispatcher("add-employee.jsp");
+            req.setAttribute("errorMessage", "Cập nhật nhân viên thất bại!");
+            req.setAttribute("employee", employee);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("edit-employee.jsp");
             dispatcher.forward(req, resp);
         }
     }
 }
+

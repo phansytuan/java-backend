@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 /* @WebServlet("/employee")
-    là cách 2: (chỉ định url) Mapping servlet thay vì cấu hình trong web.xml */
+    là Cách 2: (chỉ định url) Mapping servlet thay vì cấu hình trong web.xml */
 public class EmployeeSearchServlet extends HttpServlet {
     private IEmployeeService employeeService;
 

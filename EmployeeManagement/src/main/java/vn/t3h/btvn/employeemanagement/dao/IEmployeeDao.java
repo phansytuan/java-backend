@@ -12,4 +12,15 @@ public interface IEmployeeDao {
             String position,
             String departmentId
     );
+    // Thêm nhân viên: trả về số dòng ảnh hưởng (nếu >0 thì thành công)
+    int insertEmployee(Employee employee);
+
+    // Lấy thông tin nhân viên theo ID
+    Employee getEmployeeById(int employeeId);
+
+    // Cập nhật thông tin nhân viên
+    int updateEmployee(Employee employee);
+
+    // Xoá nhân viên
+    int deleteEmployee(int employeeId);
 }

@@ -96,9 +96,9 @@
                     <td><c:out value="${emp.departmentName}" /></td>
                     <td><c:out value="${emp.hireDate}" /></td>
                     <td>
-                        <a href="${pageContext.request.contextPath}/employee/edit?employeeId=${emp.employeeId}"
+                        <a href="${pageContext.request.contextPath}/employee-edit?employeeId=${emp.employeeId}"
                            class="btn btn-warning btn-sm me-2">Edit</a>
-                        <a href="${pageContext.request.contextPath}/employee/delete?employeeId=${emp.employeeId}"
+                        <a href="${pageContext.request.contextPath}/employee-delete?employeeId=${emp.employeeId}"
                            class="btn btn-danger btn-sm"
                            onclick="return confirm('Are you sure you want to delete this employee?');">Delete</a>
                     </td>

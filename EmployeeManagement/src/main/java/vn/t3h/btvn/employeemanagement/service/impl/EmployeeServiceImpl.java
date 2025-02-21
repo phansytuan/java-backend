@@ -42,13 +42,32 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 emptyToNull(departmentId)
         );
     }
+//    Gọi các phương thức...(...) từ lớp employeeDao (Data Access Object).
+    @Override
+    public boolean addEmployee(Employee employee) {
+        return employeeDao.insertEmployee(employee) > 0;
+    }
 
+    @Override
+    public Employee getEmployeeById(int employeeId) {
+        return employeeDao.getEmployeeById(employeeId);
+    }
+
+    @Override
+    public boolean updateEmployee(Employee employee) {
+        return employeeDao.updateEmployee(employee) > 0;
+    }
+
+    @Override
+    public boolean deleteEmployee(int employeeId) {
+        return employeeDao.deleteEmployee(employeeId) > 0;
+    }
     /* Hàm tiện ích để chuyển đổi chuỗi rỗng hoặc chứa toàn khoảng trắng thành null.
        Nếu chuỗi hợp lệ, loại bỏ khoảng trắng thừa ở đầu/cuối chuỗi.
 
        @param str Chuỗi đầu vào.
        @return Chuỗi đã xử lý hoặc null nếu chuỗi rỗng.
-     */
+    */
     private String emptyToNull(String str) {
         return (str == null || str.trim().isEmpty()) ? null : str.trim();
     }
