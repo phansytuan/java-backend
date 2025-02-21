@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-         version="6.0">
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
 
- <!-- cách khai báo servlet-->
-<!--    bước 1: khai báo class servlet-->
+    <!--   cách khai báo 1 servlet -->
+    <!--    b1 khai báo class servlet -->
     <servlet>
-<!-- khai báo tên của nó-->
+        <!--        khai báo tên servlet-->
         <servlet-name>HomeServlet</servlet-name>
-<!-- chỉ định được  vị trí class của servlet-->
+        <!--        chi định ví trị class của servlet -->
         <servlet-class>vn.t3h.employeemanager.controller.HomeServlet</servlet-class>
     </servlet>
-
-<!--    bước 2: config servlet sẽ được tương ứng với URL nào trên trình duyệt-->
+    <!--   b2 config servlet sẽ được tương ứng với url nào trên trình duyệt-->
     <servlet-mapping>
-<!--        tên servlet đã khai báo trên thẻ <servlet>-->
+        <!--        tên servlet đã khai báo trên thẻ servlet -->
         <servlet-name>HomeServlet</servlet-name>
-<!--        đường dẫn ứng với servlet, khi truy cập vào đường dẫn localhost:8080/home-servlet
-           => sẽ được xử lý bởi HomeServlet có class trong vn.t3h.employeemanager.controller.HomeServlet-->
-        <url-pattern>/home-servlet</url-pattern>
+        <!--        đường dẫn ứng với servlet, khi truy cập vào đường dẫn localhost:8080/home-servlet =>
+                    => sẽ được xử lý bở HomeServlet có class trong vn.edu.t3h.employeemanager.controller.HomeServlet
+        -->
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
 
-<!--    config file nào sẽ được chạy đầu tiên khi vừa start app-->
+    <!--    config file nao sẽ được chạy đầu tiên khi vừa start app-->
     <welcome-file-list>
-        <welcome-file>HomePage.jsp</welcome-file>
+        <welcome-file>home-page.jsp</welcome-file>
     </welcome-file-list>
-
 </web-app>
+

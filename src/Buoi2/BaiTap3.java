@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class BaiTap3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Nhập a: ");
         double a = scanner.nextDouble();
         System.out.print("Nhập b: ");
@@ -25,7 +24,8 @@ public class BaiTap3 {
                 double x = -c / b;
                 System.out.println("Nghiệm của phương trình là: x = " + x);
             }
-        } else {
+        }
+        else {
             double delta = b * b - 4 * a * c;
 
             if (delta < 0) {
@@ -36,6 +36,7 @@ public class BaiTap3 {
             } else {
                 double x1 = (-b + Math.sqrt(delta)) / (2 * a);
                 double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
                 System.out.println("Phương trình có hai nghiệm phân biệt:");
                 System.out.println("x1 = " + x1);
                 System.out.println("x2 = " + x2);

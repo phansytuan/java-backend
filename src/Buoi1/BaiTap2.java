@@ -4,15 +4,18 @@ import java.util.Scanner;
 
 public class BaiTap2 {
     public static void main(String[] args) {
-        System.out.println("Enter your name: ");
-        String name = new Scanner(System.in).nextLine();
-        System.out.println("Enter your date of birth: ");
-        String dob = new Scanner(System.in).nextLine();
-        System.out.println("Where are you from: ");
-        String from = new Scanner(System.in).nextLine();
-        System.out.println("What is your school: ");
-        String school = new Scanner(System.in).nextLine();
+        System.out.println("Enter number a: ");
+        int a = new Scanner(System.in).nextInt();
+        System.out.println("Enter number b: ");
+        int b = new Scanner(System.in).nextInt();
+        int sum= a+b;
+        int product = a*b;
+        int quotient = a/b;
+        int remainder = a%b;
 
-        System.out.println("Hello! my name is: " + name+" My date of birth is: " + dob+" I am from: " + from+" My school is: " + school);
+        System.out.println("The Sum is: " + sum);
+        System.out.println("The Product is: " + product);
+        System.out.println("The Quotient is: " + quotient);
+        System.out.println("The Remainder is: " + remainder);
     }
 }
