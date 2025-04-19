@@ -1,0 +1,4 @@
+html,body{padding:0 !important;margin:0 !important;height:auto !important}
+form{margin:0 !important;padding:0 !important}
+@media(max-width:767px){.guideRootPanel{margin-bottom:50px}
+}

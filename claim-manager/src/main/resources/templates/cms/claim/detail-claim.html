@@ -1,0 +1,237 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html class="light-style layout-menu-fixed" data-assets-path="../assets/" data-template="vertical-menu-template-free" data-theme="theme-default"
+      dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+        name="viewport"/>
+  <title>Detail Claim View - BIDV MetLife</title>
+  <link href="../assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet"/>
+  <link href="../assets/vendor/fonts/boxicons.css" rel="stylesheet"/>
+  <link class="template-customizer-core-css" href="../assets/vendor/css/core.css" rel="stylesheet"/>
+  <link class="template-customizer-theme-css" href="../assets/vendor/css/theme-default.css"
+        rel="stylesheet"/>
+  <link href="../assets/css/demo.css" rel="stylesheet"/>
+  <link href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.0/viewer.min.css"
+        rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.0/viewer.min.js"></script>
+  <script src="../assets/vendor/js/helpers.js"></script>
+  <script src="../assets/js/config.js"></script>
+</head>
+<body>
+
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+
+    <div th:include="cms/common/sidebar::sidebar"></div>
+
+    <div class="layout-page">
+      <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4 d-flex justify-content-between align-items-center">
+            <span>Chi tiết yêu cầu</span>
+            <div>
+              <button class="btn btn-primary btn-sm"><i class="bx bx-check-circle me-1"></i> Đã tiếp
+                nhận
+              </button>
+              <button class="btn btn-secondary btn-sm"><i class="bx bx-search-alt me-1"></i> Đã xác
+                minh
+              </button>
+              <button class="btn btn-success btn-sm"><i class="bx bx-task me-1"></i> Hoàn tất quy
+                trình
+              </button>
+              <button class="btn btn-info btn-sm"><i class="bx bx-like me-1"></i> Chấp nhận</button>
+              <button class="btn btn-danger btn-sm"><i class="bx bx-x-circle me-1"></i> Từ chối
+              </button>
+            </div>
+          </h4>
+
+          <div class="card mb-4">
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <h5 class="mb-0">Thông tin yêu cầu bồi thường</h5>
+            </div>
+            <div class="card-body">
+              <form>
+                <!-- Claim Information -->
+                <h6 class="mb-3">Thông tin yêu cầu</h6>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="claim-id">Mã yêu cầu</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="claim-id" placeholder="Nhập mã yêu cầu"
+                           type="text"/>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="customer-name">Tên khách hàng</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="customer-name" placeholder="Nhập tên khách hàng"
+                           type="text"/>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="customer-email">Email khách
+                    hàng</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="customer-email" placeholder="Nhập email khách hàng"
+                           type="email"/>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="customer-phone">Số điện thoại khách
+                    hàng</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="customer-phone" placeholder="Nhập số điện thoại khách hàng"
+                           type="tel"/>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="insurance-product">Tên sản phẩm bảo
+                    hiểm</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="insurance-product" placeholder="Nhập tên sản phẩm bảo hiểm"
+                           type="text"/>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="claim-date">Ngày gửi yêu cầu</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="claim-date" type="date"/>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="claim-description">Mô tả yêu
+                    cầu</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" id="claim-description"
+                              placeholder="Nhập mô tả chi tiết về yêu cầu bồi thường..."></textarea>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="claim-status">Trạng thái yêu
+                    cầu</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" id="claim-status">
+                      <option value="Đang xử lý">Đang xử lý</option>
+                      <option value="Hoàn thành">Hoàn thành</option>
+                      <option value="Đã lên lịch">Đã lên lịch</option>
+                      <option value="Đang chờ">Đang chờ</option>
+                      <option value="Bị từ chối">Bị từ chối</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Document List -->
+                <h6 class="mb-3">Danh sách tài liệu liên quan</h6>
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th>Tên file</th>
+                      <th>Loại file</th>
+                      <th>Ngày tải lên</th>
+                      <th>Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody id="document-list">
+                    <!-- Example rows -->
+                    <tr>
+                      <td>document1.pdf</td>
+                      <td>PDF</td>
+                      <td>2024-07-19</td>
+                      <td>
+                        <button class="btn btn-sm btn-info view-btn"
+                                data-file="/path/to/document1.pdf">Xem
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>image1.jpg</td>
+                      <td>Image</td>
+                      <td>2024-07-19</td>
+                      <td>
+                        <button class="btn btn-sm btn-info view-btn"
+                                data-file="/path/to/image1.jpg">Xem
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <nav aria-label="Page navigation" style="margin-top: 2%; padding-right: 2%;">
+                    <ul class="pagination" id="pagination">
+                      <!-- Pagination links will be generated dynamically here -->
+                    </ul>
+                  </nav>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div th:include="cms/common/footer::footer"></div>
+
+        <div class="content-backdrop fade"></div>
+      </div>
+    </div>
+    <div class="layout-overlay layout-menu-toggle"></div>
+  </div>
+</div>
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../assets/vendor/js/menu.js"></script>
+<script src="../assets/js/main.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+  $(document).ready(function () {
+    // PDF and Image Viewer
+    const viewerOptions = {
+      inline: true,
+      url(image) {
+        return image.src;
+      }
+    };
+
+    const viewBtns = document.querySelectorAll('.view-btn');
+    viewBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const filePath = btn.dataset.file;
+        const viewerContainer = document.createElement('div');
+        viewerContainer.innerHTML = `<img src="${filePath}" style="max-width:100%; height:auto;">`;
+        document.body.appendChild(viewerContainer);
+        new Viewer(viewerContainer, viewerOptions).show();
+      });
+    });
+
+    // Pagination
+    var items = $("#document-list tr");
+    var numItems = items.length;
+    var perPage = 5;
+
+    items.slice(perPage).hide();
+
+    $('#pagination').pagination({
+      items: numItems,
+      itemsOnPage: perPage,
+      cssStyle: 'light-theme',
+      onPageClick: function (pageNumber) {
+        var start = (pageNumber - 1) * perPage;
+        var end = start + perPage;
+        items.hide().slice(start, end).show();
+      }
+    });
+  });
+</script>
+</body>
+</html>

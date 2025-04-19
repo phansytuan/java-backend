@@ -1,0 +1,1 @@
+window.jQuery.noConflict(!0);window.jQuery||(window.jQuery=window.xfalib.jQuery);window.$||(window.$=window.xfalib.$);window._.noConflict();window._||(window._=window.xfalib._);

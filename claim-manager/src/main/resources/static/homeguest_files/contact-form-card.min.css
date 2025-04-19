@@ -1,0 +1,35 @@
+.aemformcontainer,body{overflow:hidden}
+body.overlay-interaction,body.overlay-interaction .aemformcontainer{overflow:visible}
+.MetLifeFormHeaderH1 p{text-align:left !important;font-size:16px;font-weight:400;line-height:20px;display:block;margin:0}
+.MetLifeFormHeaderH2 p{text-align:left !important;font-weight:400;font-style:italic;font-size:12px;line-height:16px;margin-top:5px;margin-bottom:15px;display:block}
+.MetLifeAllFieldsRequired p{font-weight:normal;font-size:12px;line-height:16px}
+.footer-lead-form--RTL *{direction:rtl}
+.footer-lead-form--RTL .MetLifeFormHeaderH2 p,.footer-lead-form--RTL .MetLifeFormHeaderH1 p{text-align:right !important}
+.aemformcontainer .guideFieldWidget input+.guideHelpQuestionMark{right:11px}
+.aemformcontainer .guideFieldWidget.dropDownList select+.guideHelpQuestionMark{right:32px}
+.guideTextDraw.DisclaimerSectionH3 p{padding:0;font-size:11px;line-height:15px;font-weight:400;text-align:left;margin-bottom:0}
+.aem-form-mobile .MetLifeFormHeaderH1 p,.aem-form-tablet .MetLifeFormHeaderH1 p{margin-top:0}
+form .guideContainerNode .guidefield.guidedropdownlist .guideFieldLabel.top label,form .guideContainerNode .guidefield.date-picker-metlife .guideFieldLabel.top label,form .guideContainerNode .guidefield.guidetextbox .guideFieldLabel.top label{width:80% !important}
+form .guideContainerNode .guidefield.guidedropdownlist .guideFieldLabel.top label.focus-state,form .guideContainerNode .guidefield.date-picker-metlife .guideFieldLabel.top label.focus-state,form .guideContainerNode .guidefield.guidetextbox .guideFieldLabel.top label.focus-state{width:auto !important}
+.aem-form-tablet .MetLifeFormHeaderH1 p{font-size:16px;font-weight:700;margin-bottom:10px}
+.aem-form-tablet .MetLifeFormHeaderH2 p{font-size:12px;line-height:16px;margin-top:0;display:none}
+.aem-form-tablet .guidebutton .guideFieldWidget button:not(.af-icon-button),.aem-form-tablet .guidebutton input[type='button']{width:auto !important}
+.aem-form-desktop .MetLifeFormHeaderH1 p{font-size:20px;padding-top:8px;margin-bottom:10px;margin-top:0}
+.aem-form-desktop .MetLifeFormHeaderH2 p{font-size:12px;line-height:16px;margin-top:0;display:none}
+.aem-form-desktop .guidebutton .guideFieldWidget button:not(.af-icon-button),.aem-form-desktop .guidebutton input[type='button']{width:auto !important}
+.guideRootPanel{margin-bottom:0}
+.thankYouErrorMsgPanel{text-align:center}
+.thankYouErrorMsgPanel p{margin-top:0;margin-bottom:20px}
+.aem-form-tablet form .col-md-6{width:50%;float:left}
+.aem-form-tablet .guideSeparator{margin-top:20px;margin-bottom:30px}
+.aem-form-desktop .guideSeparator{margin-top:30px;margin-bottom:40px}
+.aem-form-tablet form .col-md-6:last-child{padding-left:7.5px}
+.aem-form-tablet form .col-md-6:first-child{padding-right:7.5px}
+.aem-form-desktop form .col-md-6{width:50%;float:left}
+.aem-form-desktop form .col-md-6:last-child{padding-left:7.5px}
+.aem-form-desktop form .col-md-6:first-child{padding-right:7.5px}
+[dir="rtl"] .aem-form-tablet form .col-md-6,[dir="rtl"] .aem-form-desktop form .col-md-6{float:right}
+[dir="rtl"] .aem-form-tablet from .col-md-6:first-child,[dir="rtl"] .aem-form-desktop from .col-md-6:first-child{padding-left:7.5px;padding-right:0}
+[dir="rtl"] .aem-form-tablet from .col-md-6:last-child,[dir="rtl"] .aem-form-desktop from .col-md-6:last-child{padding-right:7.5px;padding-left:0}
+.aem-form-tablet ul.guide-fu-fileItemList{width:auto}
+.aem-form-tablet .guidefield .guideFieldTooltip{width:auto}

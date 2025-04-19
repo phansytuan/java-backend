@@ -1,0 +1,7 @@
+@media screen and (min-width: 768px) {
+.content-banner .media-container.image.media-mobile,
+.content-banner .media-container.video.media-mobile,
+.content-banner .media-container.quote.media-mobile {
+    display: none;
+}
+}

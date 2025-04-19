@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="light-style layout-menu-fixed" data-assets-path="../assets/" data-template="vertical-menu-template-free" data-theme="theme-default"
+      dir="ltr" lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum=1.0"
+        name="viewport"/>
+  <title>Claim Manager - BIDV MetLife</title>
+  <link href="../assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet"/>
+  <link href="../assets/vendor/fonts/boxicons.css" rel="stylesheet"/>
+  <link class="template-customizer-core-css" href="../assets/vendor/css/core.css" rel="stylesheet"/>
+  <link class="template-customizer-theme-css" href="../assets/vendor/css/theme-default.css"
+        rel="stylesheet"/>
+  <link href="../assets/css/demo.css" rel="stylesheet"/>
+  <link href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet"/>
+  <script src="../assets/vendor/js/helpers.js"></script>
+  <script src="../assets/js/config.js"></script>
+</head>
+<body>
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+
+    <div th:include="cms/common/sidebar::sidebar"></div>
+    <div class="layout-page">
+
+      <div th:include="cms/common/header::header"></div>
+
+      <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4 d-flex justify-content-between align-items-center">
+            <span><span class="text-muted fw-light">Claim manager /</span> List claim</span>
+            <div>
+              <button class="btn btn-primary btn-sm"><i class="bx bx-check-circle me-1"></i> Đã tiếp
+                nhận
+              </button>
+              <button class="btn btn-secondary btn-sm"><i class="bx bx-search-alt me-1"></i> Đã xác
+                minh
+              </button>
+              <button class="btn btn-success btn-sm"><i class="bx bx-task me-1"></i> Hoàn tất quy
+                trình
+              </button>
+              <button class="btn btn-info btn-sm"><i class="bx bx-like me-1"></i> Chấp nhận</button>
+              <button class="btn btn-danger btn-sm"><i class="bx bx-x-circle me-1"></i> Từ chối
+              </button>
+            </div>
+          </h4>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="search-ma-yeu-cau">Mã yêu cầu bồi thường</label>
+              <input class="form-control" id="search-ma-yeu-cau" placeholder="Nhập mã yêu cầu"
+                     type="text">
+            </div>
+            <div class="col-md-3">
+              <label for="from-date">Từ ngày</label>
+              <input class="form-control" id="from-date" type="date">
+            </div>
+            <div class="col-md-3">
+              <label for="to-date">Đến ngày</label>
+              <input class="form-control" id="to-date" type="date">
+            </div>
+            <div class="col-md-3">
+              <label for="status-claim">Trạng thái yêu cầu</label>
+              <select class="form-control" id="status-claim">
+                <option value="">Tất cả trạng thái</option>
+                <option value="Init">Khởi tạo</option>
+                <option value="Process">Nhân viên đang xử lý</option>
+                <option value="Verified">Nhân viên đã xác minh</option>
+                <option value="Invalid">Thông tin chưa chính xác</option>
+                <option value="Approve">Chấp nhận bồi thường</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-12 text-right">
+              <button class="btn btn-primary" id="search-button" onclick="actionSearch()">Tìm kiếm </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th><input id="selectAll" type="checkbox"></th>
+                  <th>Mã yêu cầu bồi thường</th>
+                  <th>Tên khách hàng</th>
+                  <th>Tên sản phẩm bảo hiểm</th>
+                  <th>Ngày gửi yêu cầu</th>
+                  <th>Mô tả yêu cầu</th>
+                  <th>Trạng thái yêu cầu</th>
+                </tr>
+                </thead>
+                <tbody class="table-border-bottom-0" id="bodyTableData">
+                </tbody>
+              </table>
+            </div>
+            <div class="d-flex justify-content-end">
+              <nav aria-label="Page navigation" style=" margin-top: 2%; padding-right: 2%;">
+                <ul class="pagination" id="paginationId">
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div th:include="cms/common/footer::footer"></div>
+
+        <div class="content-backdrop fade"></div>
+      </div>
+    </div>
+    <div class="layout-overlay layout-menu-toggle"></div>
+  </div>
+</div>
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../assets/vendor/js/menu.js"></script>
+<script src="../assets/js/main.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="../js/claim-manager/claim-manager.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Lấy tất cả các thẻ th có nội dung là "Mã yêu cầu bồi thường"
+    const thElements = document.querySelectorAll('th');
+
+    thElements.forEach(th => {
+      if (th.textContent.trim() === 'Mã yêu cầu bồi thường') {
+        // Lấy tất cả các td trong cùng cột với th này
+        const thIndex = Array.from(th.parentNode.children).indexOf(th);
+        const tdElements = document.querySelectorAll(
+            'tbody tr td:nth-child(' + (thIndex + 1) + ')');
+
+        tdElements.forEach(td => {
+          // Bọc nội dung của td trong thẻ a
+          const a = document.createElement('a');
+          a.href = 'detail-claim.html';
+          a.textContent = td.textContent;
+          td.textContent = '';
+          td.appendChild(a);
+        });
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Lấy các ô input và dropdown
+    const searchMaYeuCau = document.getElementById('search-ma-yeu-cau');
+    const fromDate = document.getElementById('from-date');
+    const toDate = document.getElementById('to-date');
+    const trangThaiYeuCau = document.getElementById('trang-thai-yeu-cau');
+    const searchButton = document.getElementById('search-button');
+
+    // Hàm lọc dữ liệu
+    function filterTable() {
+      const maYeuCauValue = searchMaYeuCau.value.toLowerCase();
+      const fromDateValue = fromDate.value;
+      const toDateValue = toDate.value;
+      const trangThaiValue = trangThaiYeuCau.value;
+
+      const rows = document.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const maYeuCau = row.cells[1].textContent.toLowerCase();
+        const ngayGuiYeuCau = row.cells[4].textContent;
+        const trangThai = row.cells[6].textContent;
+
+        const showRow =
+            (maYeuCau.includes(maYeuCauValue)) &&
+            (!fromDateValue || new Date(ngayGuiYeuCau) >= new Date(fromDateValue)) &&
+            (!toDateValue || new Date(ngayGuiYeuCau) <= new Date(toDateValue)) &&
+            (!trangThaiValue || trangThai === trangThaiValue);
+
+        row.style.display = showRow ? '' : 'none';
+      });
+    }
+
+    // Thêm sự kiện lắng nghe nút tìm kiếm
+    searchButton.addEventListener('click', filterTable);
+  });
+</script>
+
+</body>
+</html>

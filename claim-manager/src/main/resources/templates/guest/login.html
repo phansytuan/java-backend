@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+  <title>BIDV MetLife</title>
+  <link href="../loginmetlife/bootstrap.min.css" rel="stylesheet">
+  <link href="../loginmetlife/fonts.css" rel="stylesheet">
+  <link href="../loginmetlife/login.css" rel="stylesheet">
+</head>
+<body>
+<main>
+  <!-- Logo -->
+  <img alt="Cumulus NetQ" id="logo-netq" src="./loginmetlife/bidv_metlife2.png">
+  <!-- Form -->
+  <form autocomplete="off" method="POST" th:action="@{/process_login}">
+    <label for="username">Tên đăng nhập</label>
+    <input id="username" name="username" type="text">
+    <label for="password">Mật khẩu</label>
+    <input autocomplete="off" id="password" name="password" type="password">
+
+    <input id="continueURL" name="continueURL" type="hidden"
+           value="https://api.bidvmetlife.com.vn/sso-server/oauth/authorize?client_id=chart&amp;redirect_uri=https%3A%2F%2Fsales.bidvmetlife.com.vn%2Fhome%2Fauthorize&amp;response_type=code&amp;scope=user_info">
+    <input id="errorURL" name="errorURL" type="hidden" value="">
+    <input type="submit" value="Đăng nhập">
+    <a class="forgot-password" href="https://api.bidvmetlife.com.vn/sso-server/forgot-password">Quên
+      mật khẩu?</a>
+  </form>
+</main>
+<footer>
+  <h4 class="title is-6" style="margin-bottom: 5px;">Mọi yêu cầu hỗ trợ kỹ thuật xin vui lòng liên
+    hệ</h4>
+  <ul class="footer">
+    <li><a class="link link_after" href="skype:02435550606"><span
+        style="font-size: 1.8em; color: #0061a0;"><i
+        class="glyphicon glyphicon-phone-alt"></i></span> (024) 3555 0606</a></li>
+    <li><a class="link link_after" href="mailto:wecare@bidvmetlife.com.vn"><span
+        style="font-size: 1.8em; color: #0061a0;"><i
+        class="glyphicon glyphicon-envelope"></i></span>
+      wecare@bidvmetlife.com.vn </a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

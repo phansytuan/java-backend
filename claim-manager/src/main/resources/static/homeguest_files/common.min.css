@@ -1,0 +1,7 @@
+[data-adobesigntype]::selection{color:rgba(0,0,0,0)}
+[data-adobesigntype]::-moz-selection{color:rgba(0,0,0,0)}
+[data-adobesigntype]{width:6rem;display:inline-block;color:rgba(0,0,0,0);border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:rgba(0,0,0,.3);margin-left:.5rem;margin-right:.5rem;white-space:nowrap;overflow:hidden;cursor:pointer}
+[data-adobesigntype='radio'],[data-adobesigntype='checkbox']{border-bottom-width:0;background-repeat:no-repeat;background-position:left center;width:3rem}
+[data-adobesigntype='radio']{background-image:url("common/resources/images/radiobutton.svg")}
+[data-adobesigntype='checkbox']{background-image:url("common/resources/images/checkbox.svg")}
+[data-adobesigntype='dropdown']{background-image:url("common/resources/images/dropdown_chevron.svg");background-repeat:no-repeat;background-position:right center}

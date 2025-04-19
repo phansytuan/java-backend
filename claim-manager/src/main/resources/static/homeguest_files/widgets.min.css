@@ -1,0 +1,62 @@
+.numericCaptchaField .recaptchaContainer{width:100%;display:inline-block;margin-top:10px}
+.numericCaptchaField .recaptchaInputBoxContainer{width:50%;float:left}
+.numericCaptchaField .recaptchaTextContainer{width:50%;float:right}
+.numericCaptchaField .recaptchaTextContainer img{margin-top:5px}
+.numericCaptchaField .recaptchaTextContainer #captcha{width:150px;float:left}
+.numericCaptchaField #code{display:inline-block;width:60%;margin-left:5px;height:50px;background-image:url(../../../../../content/dam/refresh/global-assets/images/captcha/bg1.jpg);background-position:center center;background-size:cover;background-repeat:no-repeat;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;padding-top:10px}
+.numericCaptchaField #captcha #code .black{color:#000}
+.numericCaptchaField #captcha #code .deg30{transform:rotate(30deg)}
+.numericCaptchaField #captcha #code .fourth{font-size:19px}
+.numericCaptchaField #captcha #code span{display:inline-block;width:auto;font-weight:bold;padding-left:5px;text-shadow:6px 6px 6px grey}
+.numericCaptchaField #captcha img{cursor:pointer;width:32px;height:32px}
+.numericCaptchaField .guide-af-captcha{border:0 solid #ccc;padding:0;border-radius:.25rem;background-color:inherit}
+.numericCaptchaField div:focus{outline:0}
+.comb-datefield{float:left;height:38px;margin-right:13px}
+.guideFieldWidget input[type="text"].comb-form-group-day,.guideFieldWidget input[type="text"].comb-form-group-month,.guideFieldWidget input[type="number"].comb-form-group-day,.guideFieldWidget input[type="number"].comb-form-group-month{text-transform:uppercase;width:3.625rem;padding-bottom:auto;padding-right:auto;padding-top:auto;padding-left:auto;text-align:center}
+.guideFieldWidget input[type="text"].comb-form-group-year,.guideFieldWidget input[type="number"].comb-form-group-year{width:4rem;text-align:center}
+.hideTitle{display:none}
+.showTitle{display:block}
+.guideFieldWidget.guideDateInputWidget.showDateInputLabels{height:76px}
+.guideFieldWidget.guideDateInputWidget.dateInputWidget{min-height:63px}
+.widget_imageCheckRadioButtonWidget.guideRadioButtonGroupItems,.guideImageChoice.guideRadioButtonGroupItems,.widget_imageCheckRadioButtonWidget.guideCheckBoxGroupItems,.guideImageChoice.guideCheckBoxGroupItems{color:transparent;display:block}
+.widget_imageCheckRadioButtonWidget .guideRadioButtonGroupItems,.guideImageChoice .guideRadioButtonGroupItems,.widget_imageCheckRadioButtonWidget .guideCheckBoxGroupItems,.guideImageChoice .guideCheckBoxGroupItems{color:transparent;display:block}
+.widget_imageCheckRadioButtonWidget .guideRadioButtonItem,.guideImageChoice .guideRadioButtonItem,.widget_imageCheckRadioButtonWidget .guideCheckBoxItem,.guideImageChoice .guideCheckBoxItem{border-radius:2px;padding:0;margin:0;cursor:pointer;width:120px;height:80px;background-color:transparent;display:inline-block;position:relative;font-size:.01em;margin-right:10px}
+.widget_imageCheckRadioButtonWidget .guideRadioButtonItem.guideFieldVerticalAlignment,.guideImageChoice .guideRadioButtonItem.guideFieldVerticalAlignment,.widget_imageCheckRadioButtonWidget .guideCheckBoxItem.guideFieldVerticalAlignment,.guideImageChoice .guideCheckBoxItem.guideFieldVerticalAlignment{display:block;margin-bottom:10px}
+.widget_imageCheckRadioButtonWidget .guideRadioButtonItem.imageCheckButtonDisabled,.guideImageChoice .guideRadioButtonItem.imageCheckButtonDisabled,.widget_imageCheckRadioButtonWidget .guideCheckBoxItem.imageCheckButtonDisabled,.guideImageChoice .guideCheckBoxItem.imageCheckButtonDisabled{opacity:.5}
+.widget_imageCheckRadioButtonWidget .guideWidgetLabel,.guideImageChoice .guideWidgetLabel{content:"  ";width:inherit;height:inherit;padding:inherit;margin:inherit}
+.widget_imageCheckRadioButtonWidget .guideWidgetLabel label,.guideImageChoice .guideWidgetLabel label{width:0;height:0}
+.widget_imageCheckRadioButtonWidget input[type="radio"],.guideImageChoice input[type="radio"],.widget_imageCheckRadioButtonWidget input[type="checkbox"],.guideImageChoice input[type="checkbox"],.widget_imageCheckRadioButtonWidget .guideFieldWidget,.guideImageChoice .guideFieldWidget{width:0;height:1px;opacity:0}
+.widget_imageCheckRadioButtonWidget .guideRadioButtonItem.imageCheckButtonChecked,.widget_imageCheckRadioButtonWidget .guideCheckBoxItem.imageCheckButtonChecked{opacity:.5;background-color:#176be6}
+.guideImageChoice .guideRadioButtonItem,.guideImageChoice .guideCheckBoxItem{width:80px}
+.guideImageChoice input[type="radio"],.guideImageChoice input[type="checkbox"]{display:none}
+.guideImageChoice .guideRadioButtonItem.imageCheckButtonChecked .guideWidgetLabel,.guideImageChoice .guideCheckBoxItem.imageCheckButtonChecked .guideWidgetLabel{background:url(../../../../../etc.clientlibs/fd/af/runtime/clientlibs/widgets/imagebuttons/resources/assets/ImageChoiceSelectIcon.svg) no-repeat center,rgba(23,107,230,.5)}
+.guideImageChoice.guideCheckBoxGroupItems .guideCheckBoxItem .guideFieldWidget,.guideImageChoice.guideRadioButtonGroupItems .guideRadioButtonItem .guideFieldWidget{display:none}
+.guideFieldWidget.guideNumericStepper{width:40%;min-width:200px;background-color:#fff}
+.guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input,.guideFieldWidget.guideNumericStepper input[type='number'].ui-spinner-input,.guideFieldWidget.guideNumericStepper .ui-spinner-input{width:calc(100% - 5rem);border-top-width:0;border-left-width:0;border-bottom-width:0;border-right-width:0;text-align:center}
+.guideFieldWidget.guideNumericStepper a.ui-spinner-button{height:2.5rem;width:2.5rem;display:inline-block}
+.guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up{float:right;background:url(../../../../../etc.clientlibs/fd/af/runtime/clientlibs/widgets/numericStepper/resources/images/Plus.svg) center center / .75rem .75rem no-repeat}
+.guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up :hover,.guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up :focus{background:url(../../../../../etc.clientlibs/fd/af/runtime/clientlibs/widgets/numericStepper/resources/images/Plus_Hover.svg) center center / .75rem .75rem no-repeat}
+.guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down{float:left;background:url(../../../../../etc.clientlibs/fd/af/runtime/clientlibs/widgets/numericStepper/resources/images/Minus.svg) center center / .75rem .75rem no-repeat}
+.guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down :hover,.guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down :focus{background:url(../../../../../etc.clientlibs/fd/af/runtime/clientlibs/widgets/numericStepper/resources/images/Minus_Hover.svg) center center / .75rem .75rem no-repeat}
+.guideFieldWidget.guideNumericStepper a.ui-spinner-button .ui-icon{display:none}
+.guideFieldWidget.richText .richTextWidget{border-style:solid;border-top-width:1px;border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-bottom-left-radius:.25rem;border-bottom-right-radius:.25rem;border-top-right-radius:.25rem;border-top-left-radius:.25rem;border-color:#ccc;height:80px;width:100%;color:#555;font-size:.875rem;padding-bottom:.625rem;padding-left:.625rem;padding-top:.625rem;padding-right:.625rem;background:#fff;overflow:auto}
+.guideFieldWidget.richText .hideToolbar.rte_toolBar{display:none !important}
+.guideSwitch{max-width:80px}
+.ui-switchbutton{display:inline-block;padding:0;position:relative;overflow:hidden;cursor:pointer;user-select:none;box-sizing:initial}
+.ui-switchbutton input{display:block;width:0;height:1px;opacity:0}
+.ui-switchbutton label{cursor:pointer;display:block;position:absolute;top:0;width:auto;overflow:hidden;user-select:none;margin-top:0;margin-left:0;margin-right:0;box-sizing:initial;white-space:pre}
+.ui-switchbutton label.ui-switchbutton-disabled{right:0;text-align:right;text-shadow:0 0 2px rgba(255,255,255,0.6)}
+.ui-switchbutton label.ui-switchbutton-disabled span{display:inline-block;text-align:center;padding-left:2px;padding-right:3px}
+.ui-switchbutton.ui-switchbutton-no-labels label span{width:1em}
+.ui-switchbutton label.ui-switchbutton-enabled{left:0;text-shadow:0 0 2px rgba(0,0,0,0.6)}
+.ui-switchbutton label.ui-switchbutton-enabled span{display:inline-block;text-align:center;padding-left:3px;padding-right:2px}
+.ui-switchbutton .ui-switchbutton-handle{display:block;width:0;position:absolute;top:0;left:0;cursor:pointer;box-sizing:initial}
+.ui-switchbutton.ui-switchbutton-disabled{opacity:.4;-ms-filter:alpha(opacity=40);filter:alpha(opacity=40);filter:Alpha(Opacity=40);cursor:default}
+.ui-switchbutton.ui-switchbutton-disabled label,.ui-switchbutton.ui-switchbutton-disabled .ui-switchbutton-handle{cursor:default}
+.ui-switchbutton-default{height:24px;margin-top:5px}
+.ui-switchbutton-default label{font-size:14px;line-height:18px;font-weight:bold;text-transform:uppercase;height:20px;padding-top:4px}
+.ui-switchbutton-default label.ui-switchbutton-disabled{color:#7c7c7c;background:linear-gradient(180deg,#b9b9b9,#f8f8f8);box-shadow:inset 0 0 1px rgba(0,0,0,0.5);padding-right:0;border-radius:12px}
+.ui-switchbutton-default label.ui-switchbutton-enabled{color:white;background:linear-gradient(180deg,#7d9356,#c1da93);box-shadow:inset 0 0 1px rgba(0,0,0,0.7);padding-right:0;border-radius:12px;border-top-right-radius:0;border-bottom-right-radius:0}
+.ui-switchbutton-default .ui-switchbutton-handle{background:linear-gradient(180deg,#d7d7d7,#fcfcfc);box-shadow:inset 0 0 2px rgba(255,255,255,1);border:1px solid #a2a2a2;height:22px;width:22px !important;border-radius:12px}
+.ui-switchbutton-default.ui-state-active{border:0;font-weight:normal;color:#000}
+.ui-switchbutton-default.ui-state-active label.ui-switchbutton-enabled{padding-right:10px}

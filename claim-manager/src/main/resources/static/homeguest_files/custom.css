@@ -1,0 +1,136 @@
+.contact-container.contact-container--form-card,
+.contactCard,
+.footer-lead-form.parbase.section {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.form-control::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+}
+
+.form-control {
+    color: #000; /* Normal text color */
+}
+.card-header {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.layout-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.layout1, .layout2 {
+    flex: 1;
+}
+
+.layout3 {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.table-responsive {
+    margin-top: 10px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table-sm th,
+.table-sm td {
+    padding: 0.3rem;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+    border-bottom-width: 2px;
+}
+
+.table-borderless th,
+.table-borderless td,
+.table-borderless thead th,
+.table-borderless tbody + tbody {
+    border: 0;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.upload-section {
+    margin-top: 20px;
+}
+
+.upload-section input[type="file"] {
+    display: none;
+}
+
+.upload-section label {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}

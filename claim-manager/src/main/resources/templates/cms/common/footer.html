@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:fragment="footer">
+  <footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+      <div class="mb-2 mb-md-0">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        , BIDV MetLife - Hệ thống quản lý bồi thường bảo hiểm
+      </div>
+      <div>
+        <a href="https://www.bidvmetlife.com.vn/" class="footer-link me-4" target="_blank">Trang chủ</a>
+        <a href="https://www.bidvmetlife.com.vn/contact" target="_blank" class="footer-link me-4">Liên hệ</a>
+        <a href="https://www.bidvmetlife.com.vn/privacy" target="_blank" class="footer-link me-4">Chính sách bảo mật</a>
+        <a href="https://www.bidvmetlife.com.vn/support" target="_blank" class="footer-link me-4">Hỗ trợ</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
