@@ -2,7 +2,6 @@ package com.tuancode.service.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDate;
-import lombok.Data;
 
 public class UserDTO {
 
@@ -20,6 +19,15 @@ public class UserDTO {
   private LocalDate lastModifiedDate;
   private String stringBase64Avatar;
   private String mimeType;
+  private String roleName;
+
+  public String getRoleName() {
+    return roleName;
+  }
+
+  public void setRoleName(String roleName) {
+    this.roleName = roleName;
+  }
 
   public String getMimeType() {
     return mimeType;

@@ -160,8 +160,9 @@ public class UserServiceImpl implements UserService {
     userEntity.setRoles(roleEntities);
   }
 
-  //   1.	convert dữ liệu field stringBase64Avatar từ StringBase64 trong userDto về lại file image
+  //    1.	convert dữ liệu filed stringBase64Avatar từ StringBase64 trong userDto về lại file image
   public String saveImageAvatar(UserDTO userDTO) {
+
     if (StringUtils.isEmpty(userDTO.getStringBase64Avatar())) {
       return "";
     }
@@ -174,24 +175,25 @@ public class UserServiceImpl implements UserService {
 
     // xác định đuôi của file
     String fileExtension = "";
-    if (mimeType.equals("image/jpeg")) {
+    if (mimeType.contains("image/jpeg")) {
       fileExtension = ".jpg";
-    } else if (mimeType.equals("image/png")) {
+    } else if (mimeType.contains("image/png")) {
       fileExtension = ".png";
     }
-    userDTO.setMimeType(mimeType);
+    userDTO.setMimeType(mimeType + ",");
 
-    //   2.	lưu file image vào folder của ổ cứng local tại path D:\T3H_Java\(springboot) file-upload\image
-//  String rootFolderImage = "D:\\T3H_Java\\(springboot) file-upload\\image\\";
+    //      2.	lưu file image vào folder của ổ cứng local tại path D:\\T3H_Java\\(springboot) file-upload\\image
+    // String rootFolderImage = "D:\\T3H_Java\\(springboot) file-upload\\image\\";
     String rootFolderImage = rootFolderUpload + rootFolderImageUpload;
-    String fileName = "avatar-" + userDTO.getUsername() + UUID.randomUUID() + fileExtension;
+    String fileName = "avatar_" + userDTO.getUsername() + fileExtension;
     String finalPathAvatar = rootFolderImage + fileName;
 
-    // kiểm tra xem có thư mục đó chưa
+    // Kiểm tra xem có thư mục đó chưa
     File rootFolderData = new File(rootFolderImage);
     if (!rootFolderData.exists()) { // nếu chưa có -> tạo folder
-      rootFolderData.mkdirs();
+      rootFolderData.mkdir();
     }
+
     // lưu file
     try (FileOutputStream fos = new FileOutputStream(new File(finalPathAvatar))) {
       fos.write(decodedByte);

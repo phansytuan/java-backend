@@ -6,6 +6,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class SessionUtils {
+
   public static UserDetails getUserPrincipal() {
     // lấy ra thông tin user hiện tại đang thực hiện request vừa login xong
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -15,7 +16,7 @@ public class SessionUtils {
     }
     // thông tin user hiện tại
     UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-    System.out.println(String.format("User %s logged in", userDetails.getUsername()));
+    System.out.printf("User %s logged in%n", userDetails.getUsername());
     return userDetails;
   }
 }

@@ -13,7 +13,7 @@ public class FileServiceImpl implements FileService {
 
   @Override
   public String getBase64FromPath(String path) {
-    if(StringUtils.isEmpty(path)) {
+    if (StringUtils.isEmpty(path)) {
       return null;
     }
 
